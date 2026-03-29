@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff | AKROSPORT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --neon: #ccff00; --dark: #0a0a0a; --card-bg: #141414; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--dark); color: white; overflow-x: hidden; }
+        h1, h2, h3 { font-weight: 900; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed top-0 w-full z-50 bg-[#0a0a0a]/95 backdrop-blur-md border-b border-white/10 px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-4">
+            <button onclick="toggleMenu()" class="flex flex-col gap-1.5 w-7 group">
+                <div class="h-[3px] w-full bg-white group-hover:bg-[#ccff00] transition rounded"></div>
+                <div class="h-[3px] w-full bg-[#ccff00] rounded"></div>
+                <div class="h-[3px] w-full bg-white group-hover:bg-[#ccff00] transition rounded"></div>
+            </button>
+            <a href="index.html" class="text-2xl font-black tracking-tight uppercase">AKRO<span class="text-[#ccff00]">SPORT</span></a>
+        </div>
+        <a href="index.html" class="text-xs font-bold tracking-wide border border-white/20 text-white px-5 py-2 rounded-full hover:bg-white hover:text-black transition">VOLVER</a>
+    </nav>
+
+    <div id="side-menu" class="fixed top-0 left-0 h-full w-80 bg-[#141414] z-[100] p-12 -translate-x-full transition-transform duration-500 shadow-2xl border-r border-white/10">
+        <button onclick="toggleMenu()" class="text-[#ccff00] text-2xl mb-16 font-black uppercase">Cerrar ✕</button>
+        <div class="flex flex-col gap-8 font-bold text-2xl uppercase">
+            <a href="index.html" class="hover:text-[#ccff00] transition">Inicio</a>
+            <a href="nosotros.html" class="hover:text-[#ccff00] transition">Nosotros</a>
+            <a href="staff.html" class="text-[#ccff00] transition">Staff</a>
+            <a href="empresas.html" class="hover:text-[#ccff00] transition">Empresas</a>
+        </div>
+    </div>
+    <div id="overlay" onclick="toggleMenu()" class="fixed inset-0 bg-black/60 z-[90] hidden"></div>
+
+    <section class="py-32 px-6 min-h-screen">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-sm font-bold tracking-[0.3em] text-[#ccff00] mb-4 uppercase text-center text-white">Nuestro Equipo</h2>
+            <h3 class="text-4xl md:text-5xl font-black mb-16 text-center text-white uppercase">Liderando tu <span class="text-[#ccff00]">Transformación</span></h3>
+            
+            <div class="max-w-2xl mx-auto bg-[#141414] rounded-2xl overflow-hidden flex flex-col md:flex-row shadow-2xl border border-white/5">
+                <div class="w-full md:w-64 h-80 md:h-auto bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-500" style="background-image: url('andres.jpg');"></div>
+                <div class="p-8 flex-1 flex flex-col justify-center">
+                    <h2 class="text-xs font-bold tracking-widest text-[#ccff00] mb-2 uppercase">Head Coach</h2>
+                    <h3 class="text-3xl font-black uppercase mb-1 text-white">Andres Muñoz</h3>
+                    <div class="space-y-0.5 mb-6 text-gray-400 font-bold uppercase text-xs">
+                        <p>Técnico Deportivo</p>
+                        <p>Instructor Calistenia</p>
+                    </div>
+                    <div class="border-t border-white/10 pt-4">
+                        <p class="text-white font-black text-lg uppercase italic leading-tight">
+                            "La Determinación Es Indestructible"
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleMenu() { 
+            document.getElementById('side-menu').classList.toggle('-translate-x-full'); 
+            document.getElementById('overlay').classList.toggle('hidden'); 
+        }
+    </script>
+</body>
+</html>

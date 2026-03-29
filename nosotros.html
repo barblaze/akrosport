@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros | AKROSPORT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --neon: #ccff00; --dark: #0a0a0a; --card-bg: #141414; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--dark); color: white; overflow-x: hidden; }
+        h1, h2, h3 { font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed top-0 w-full z-50 bg-[#0a0a0a]/95 backdrop-blur-md border-b border-white/10 px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-4">
+            <button onclick="toggleMenu()" class="flex flex-col gap-1.5 w-7 group">
+                <div class="h-[3px] w-full bg-white group-hover:bg-[#ccff00] transition rounded"></div>
+                <div class="h-[3px] w-full bg-[#ccff00] rounded"></div>
+                <div class="h-[3px] w-full bg-white group-hover:bg-[#ccff00] transition rounded"></div>
+            </button>
+            <a href="index.html" class="text-2xl font-black tracking-tight uppercase">AKRO<span class="text-[#ccff00]">SPORT</span></a>
+        </div>
+        <a href="index.html" class="text-xs font-bold tracking-wide border border-white/20 text-white px-5 py-2 rounded-full hover:bg-white hover:text-black transition">VOLVER</a>
+    </nav>
+
+    <div id="side-menu" class="fixed top-0 left-0 h-full w-80 bg-[#141414] z-[100] p-12 -translate-x-full transition-transform duration-500 shadow-2xl border-r border-white/10">
+        <button onclick="toggleMenu()" class="text-[#ccff00] text-2xl mb-16 font-black uppercase">Cerrar ✕</button>
+        <div class="flex flex-col gap-8 font-bold text-2xl uppercase">
+            <a href="index.html" class="hover:text-[#ccff00] transition">Inicio</a>
+            <a href="nosotros.html" class="text-[#ccff00] transition">Nosotros</a>
+            <a href="staff.html" class="hover:text-[#ccff00] transition">Staff</a>
+            <a href="empresas.html" class="hover:text-[#ccff00] transition">Empresas</a>
+        </div>
+    </div>
+    <div id="overlay" onclick="toggleMenu()" class="fixed inset-0 bg-black/60 z-[90] hidden"></div>
+
+    <section class="py-32 bg-[#0a0a0a] px-6 min-h-screen flex flex-col justify-center">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-sm font-bold tracking-[0.3em] text-[#ccff00] mb-4 uppercase">Sobre Nosotros</h2>
+            <h3 class="text-4xl md:text-6xl font-black mb-8 text-white uppercase">Gimnasio <span class="text-[#ccff00]">Inteligente</span></h3>
+            <div class="space-y-6 text-gray-400 font-medium leading-relaxed text-lg max-w-2xl mx-auto bg-[#141414] p-10 rounded-2xl border border-white/5 shadow-2xl">
+                <p>En <span class="font-black text-white uppercase">Akrosport</span>, creemos que el movimiento es la base de una vida plena. Somos más que un gimnasio; somos una comunidad dedicada a potenciar el rendimiento humano.</p>
+                <p>Nuestro compromiso es brindarte las herramientas de la más alta calidad y el mejor ambiente para que superes tus propios límites, sin importar tu punto de partida.</p>
+            </div>
+            
+            <a href="index.html#planes" class="inline-block mt-12 bg-[#ccff00] text-black font-black uppercase px-8 py-4 rounded-full hover:scale-105 transition">Ver Planes</a>
+        </div>
+    </section>
+
+    <script>
+        function toggleMenu() { 
+            document.getElementById('side-menu').classList.toggle('-translate-x-full'); 
+            document.getElementById('overlay').classList.toggle('hidden'); 
+        }
+    </script>
+</body>
+</html>

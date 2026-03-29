@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convenios Empresas | AKROSPORT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --neon: #ccff00; --dark: #0a0a0a; --card-bg: #141414; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--dark); color: white; overflow-x: hidden; }
+        h1, h2 { font-weight: 900; text-transform: uppercase; }
+        input { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 14px; width: 100%; color: white; outline: none; transition: 0.3s; }
+        input:focus { border-color: var(--neon); background: rgba(255,255,255,0.1); }
+        .btn-smart { background: var(--neon); color: black; font-weight: 900; padding: 16px; border-radius: 50px; text-transform: uppercase; transition: 0.3s; cursor: pointer; border: none; }
+        .btn-smart:hover { filter: brightness(1.1); transform: scale(1.02); }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed top-0 w-full z-50 bg-[#0a0a0a]/95 backdrop-blur-md border-b border-white/10 px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-4">
+            <button onclick="toggleMenu()" class="flex flex-col gap-1.5 w-7 group">
+                <div class="h-[3px] w-full bg-white group-hover:bg-[#ccff00] transition rounded"></div>
+                <div class="h-[3px] w-full bg-[#ccff00] rounded"></div>
+                <div class="h-[3px] w-full bg-white group-hover:bg-[#ccff00] transition rounded"></div>
+            </button>
+            <a href="index.html" class="text-2xl font-black tracking-tight uppercase">AKRO<span class="text-[#ccff00]">SPORT</span></a>
+        </div>
+        <a href="index.html" class="text-xs font-bold tracking-wide border border-white/20 text-white px-5 py-2 rounded-full hover:bg-white hover:text-black transition">VOLVER</a>
+    </nav>
+
+    <div id="side-menu" class="fixed top-0 left-0 h-full w-80 bg-[#141414] z-[100] p-12 -translate-x-full transition-transform duration-500 shadow-2xl border-r border-white/10">
+        <button onclick="toggleMenu()" class="text-[#ccff00] text-2xl mb-16 font-black uppercase">Cerrar ✕</button>
+        <div class="flex flex-col gap-8 font-bold text-2xl uppercase">
+            <a href="index.html" class="hover:text-[#ccff00] transition">Inicio</a>
+            <a href="nosotros.html" class="hover:text-[#ccff00] transition">Nosotros</a>
+            <a href="staff.html" class="hover:text-[#ccff00] transition">Staff</a>
+            <a href="empresas.html" class="text-[#ccff00] transition">Empresas</a>
+        </div>
+    </div>
+    <div id="overlay" onclick="toggleMenu()" class="fixed inset-0 bg-black/60 z-[90] hidden"></div>
+
+    <section class="py-32 px-6 min-h-screen flex items-center justify-center">
+        <div class="max-w-xl w-full bg-[#141414] p-10 rounded-3xl border border-white/10 shadow-2xl">
+            <h2 class="text-3xl font-black text-white mb-2 uppercase text-center">Convenio <span class="text-[#ccff00]">Corporativo</span></h2>
+            <p class="text-xs text-gray-500 uppercase tracking-widest mb-10 font-bold text-center">Potencia el bienestar de tu equipo</p>
+            
+            <form action="https://formsubmit.co/Rodrigo.mfig@outlook.com" method="POST" class="space-y-6">
+                <input type="hidden" name="_next" value="https://akrosport.cl">
+                <input type="hidden" name="_captcha" value="false">
+                
+                <div>
+                    <label class="text-xs uppercase font-bold text-gray-400 mb-2 block ml-2">Nombre de la Empresa</label>
+                    <input type="text" name="Empresa" placeholder="EJ: CODELCO" required>
+                </div>
+                <div>
+                    <label class="text-xs uppercase font-bold text-gray-400 mb-2 block ml-2">Email de Contacto</label>
+                    <input type="email" name="Email" placeholder="RH@EMPRESA.CL" required>
+                </div>
+                <div>
+                    <label class="text-xs uppercase font-bold text-gray-400 mb-2 block ml-2">N° Aproximado de Colaboradores</label>
+                    <input type="number" name="Colaboradores" placeholder="10 - 100+">
+                </div>
+                <button type="submit" class="btn-smart w-full mt-4">ENVIAR SOLICITUD DE CONVENIO</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        function toggleMenu() { 
+            document.getElementById('side-menu').classList.toggle('-translate-x-full'); 
+            document.getElementById('overlay').classList.toggle('hidden'); 
+        }
+    </script>
+</body>
+</html>
